@@ -100,7 +100,7 @@ int main(){
 	int n;
 	printf("Enter '1' to Insert\nEnter '2' to View the Table\n Enter '3' to Quit\n");
 	while(1){
-		printf("%s", "\nEnter: ");
+		printf("%s", "\nOperation: ");
 		scanf("%d", &task);
 					
 		if (task==1){
