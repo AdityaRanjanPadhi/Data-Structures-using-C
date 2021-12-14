@@ -114,7 +114,8 @@ int main(){
 		}
 		else if(task==3){
 			free(ptr);
-  		    goto END;	
+			ptr=NULL;
+  		   	goto END;	
 		}
 		else{
 			printf("Enter a Valid Task");
