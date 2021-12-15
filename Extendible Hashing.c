@@ -2,6 +2,8 @@
 #include<stdlib.h>
 #include<math.h>
 
+#define Bucket_Size 3 //Enter the Bucket Size here
+
 int d2b(int t){
 	int k;
 	int num=0;
@@ -29,7 +31,7 @@ int b2d(int n){
 
 void create(int** ptr,int i){
 	int *temp;
-	temp = (int*)calloc(3,sizeof(int));
+	temp = (int*)calloc(Bucket_Size,sizeof(int));
 	*(ptr + i) = temp;
 }
 
@@ -43,12 +45,12 @@ void insert(int** ptr,int *len, int n, int *height,int arr[],int point){
 	p = n%k;
 	n = b2d(p);
 	t=0;
-	for(int i=0; i<3; i++){
+	for(int i=0; i<Bucket_Size; i++){
 		if(*(*(ptr + n)+i)!=0){
 			t+=1;
 		}
 	}
-	if(t>=3){
+	if(t>=Bucket_Size){
 		for(int i=0; i<(*len); i++){
 			free(*(ptr+i));
 		}
@@ -69,7 +71,9 @@ void show(int** ptr,int len){
 	int i=0;
 	while(i<len){
 		printf("Index: %d\n", d2b(i));
-		printf("%d %d %d", (*(*(ptr+i)+0)),(*(*(ptr+i)+1)),(*(*(ptr+i)+2)));
+		for(int j=0; j<Bucket_Size; j++){
+			printf("%d ", (*(*(ptr+i)+j)));
+		}
 		printf("\n");
 		i++;
 	}
@@ -84,8 +88,8 @@ int main(){
 	
 	int *a;
 	int *b;
-	a = (int *)calloc(3,sizeof(int));
-	b = (int *)calloc(3,sizeof(int));
+	a = (int *)calloc(Bucket_Size,sizeof(int));
+	b = (int *)calloc(Bucket_Size,sizeof(int));
 	
 	*ptr = a;
 	*(ptr + 1) = b;
@@ -98,7 +102,7 @@ int main(){
 	int point=0;
 	int task;
 	int n;
-	printf("Enter '1' to Insert\nEnter '2' to View the Table\n Enter '3' to Quit\n");
+	printf("Enter '1' to Insert\nEnter '2' to View the Table\nEnter '3' to Quit\n");
 	while(1){
 		printf("%s", "\nOperation: ");
 		scanf("%d", &task);
