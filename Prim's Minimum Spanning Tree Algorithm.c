@@ -102,3 +102,21 @@ int main(){
 	
 	return 0;
 }
+
+/*Sample Input
+Enter the Number of Nodes: 7
+Enter the Number of Edges: 11
+Enter the Graph in the following format:
+Node 1  Node 2   Weight
+1 2 1 (Relation form Node '1' to Node '2' having weight '1')
+1 3 4 (Relation form Node '1' to Node '3' having weight '4')
+2 4 3 (Relation form Node '2' to Node '4' having weight '3')
+3 4 2
+2 5 6
+3 6 5
+4 5 2
+4 6 4
+5 6 2
+5 7 7
+6 7 6
+*/
