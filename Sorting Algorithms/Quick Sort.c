@@ -8,7 +8,7 @@ int partition(int arr[], int low, int high){
 	int t=1;
 	while(t){
 		if(pivot==end && start!=end){
-			if(arr[start]<arr[pivot]){
+			if(arr[start]<=arr[pivot]){
 				start+=1;
 			}
 			else if(arr[start]>arr[pivot]){
@@ -20,7 +20,7 @@ int partition(int arr[], int low, int high){
 			}
 		}
 		else if(pivot==start && start!=end){
-			if(arr[end]>arr[pivot]){
+			if(arr[end]>=arr[pivot]){
 				end-=1;
 			}
 			else if(arr[end]<arr[pivot]){
